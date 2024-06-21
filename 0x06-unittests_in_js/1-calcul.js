@@ -14,3 +14,5 @@ const calculateNumber = (type, a, b) => {
       return (div);
   }
 };
+
+module.exports = calculateNumber;
