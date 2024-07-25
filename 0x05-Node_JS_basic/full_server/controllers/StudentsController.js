@@ -6,8 +6,9 @@ class StudentsController {
             const data = await readDatabase(process.env.DATABASE_PATH);
             let response = 'This is the list of our students\n';
             Object.keys(data).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase())).forEach((field) => {
-                response += `Number of students in ${field}: ${data[field].length}. List: ${data[field].join(', ')}`;
+                response += `Number of students in ${field}: ${data[field].length}. List: ${data[field].join(', ')}\n`;
             });
+	    response = response.trimEnd();
             res.status(200).send(response);
         } catch (error) {
             res.status(500).send('Cannot load the database');
