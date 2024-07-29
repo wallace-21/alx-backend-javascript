@@ -12,4 +12,3 @@ export default function taskBlock(trueOrFalse) {
 
   return [newTask, newTask2];
 }
-
