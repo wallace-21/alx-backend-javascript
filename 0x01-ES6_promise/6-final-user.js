@@ -6,12 +6,11 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     signUpUser(firstName, lastName),
     uploadPhoto(fileName)
   ])
-  .then(results => {
-    // Map results to the desired format
-    return results.map(result => ({
+  .then(results => 
+    results.map(result => ({
       status: result.status,
       value: result.status === 'fulfilled' ? result.value : `${result.reason.name}: ${result.reason.message}`
-    }));
-  });
+    }))
+  );
 }
 
